@@ -1,0 +1,47 @@
+reddit:
+  username: "your_reddit_username"
+  password: "your_reddit_password"
+  # Path to store session cookies so you don't have to log in on every scheduled run
+  user_data_dir: "./chrome_profile"
+  headless: false # Keep false so you can intervene if a CAPTCHA appears
+
+subreddits:
+  - name: "wallstreetbets"
+    sort: "hot" # hot, new, or top
+    limit: 25
+  - name: "stocks"
+    sort: "hot"
+    limit: 25
+  - name: "options"
+    sort: "new"
+    limit: 20
+  - name: "pennystocks"
+    sort: "new"
+    limit: 20
+
+filters:
+  min_score: 10
+  min_comments: 5
+  keywords:
+    - "call"
+    - "put"
+    - "earnings"
+    - "guidance"
+    - "squeeze"
+    - "breakout"
+  tickers:
+    - "NVDA"
+    - "AAPL"
+    - "TSLA"
+    - "AMD"
+    - "PLTR"
+    - "SPY"
+    - "QQQ"
+
+discord:
+  enabled: true
+  webhook_url: "https://discord.com/api/webhooks/YOUR_WEBHOOK_URL_HERE"
+  embed_color: 3447003 # Discord Blue
+
+storage:
+  csv_file: "./run_results.csv"
